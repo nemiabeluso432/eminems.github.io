@@ -3,40 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nemia Cocal Beluso | Portfolio</title>
+  <title>Nemia Beluso // Portfolio & Resume</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Header Navigation -->
   <header>
     <div class="logo">NEMIA BELUSO // PORTFOLIO</div>
     <nav>
-      <a href="#about">Resume</a>
+      <a href="#about">About</a>
+      <a href="#cv-section">CV Resume</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Photography Gallery</a>
+      <a href="#games">Mini-Games 🎮</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- Main Content / Resume Section -->
   <main>
-    <!-- RESUME SECTION -->
-    <section id="about" class="card">
+    <!-- About / Main Hero Section -->
+    <section id="about" class="hero-section">
       <h1>NEMIA COCAL BELUSO</h1>
-      <p class="subtitle">// Photographer</p>
+      <p class="tagline">// Photographer</p>
       
-      <div class="info-grid">
+      <div class="contact-info">
         <p><strong>📍 Address:</strong> 1212 Gen. Luna St. Paco Manila</p>
         <p><strong>📧 Email:</strong> nemiabeluso432@gmail.com</p>
         <p><strong>📞 Contact:</strong> 09062539548</p>
       </div>
     </section>
 
-    <!-- TECHNICAL SKILLS SECTION -->
-    <section id="skills" class="card">
+    <!-- CV / RESUME SECTION -->
+    <section id="cv-section" class="resume-section">
+      <h2>Curriculum Vitae / Resume</h2>
+      <p class="subtitle">You can view or download my official CV below.</p>
+
+      <div class="resume-actions">
+        <button id="toggleResumeBtn" type="button" class="btn toggle-btn">👁️ Hide CV Preview</button>
+        <a href="RESUME_NARAG.pdf" target="_blank" class="btn view-btn">↗️ Open in New Tab</a>
+        <a href="RESUME_NARAG.pdf" download="RESUME_NARAG.pdf" class="btn download-btn">📥 Download CV (PDF)</a>
+      </div>
+
+      <div id="resumeViewer" class="pdf-container">
+        <iframe src="RESUME_NARAG.pdf" type="application/pdf" width="100%" height="700px">
+          <p>Unable to load PDF? <a href="RESUME_NARAG.pdf" download>Click here to download the CV.</a></p>
+        </iframe>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
       <h2>Technical & Creative Skills</h2>
-      <div class="tags">
+      <div class="skills-grid">
         <span>HTML</span>
         <span>Portrait Photography</span>
         <span>Landscape & Street Photography</span>
@@ -46,57 +65,115 @@
       </div>
     </section>
 
-    <!-- FEATURED PROJECTS / PHOTOGRAPHY GALLERY -->
-    <section id="projects" class="card">
+    <!-- Projects Gallery -->
+    <section id="projects" class="projects-section">
       <h2>Featured Photography Projects</h2>
-      <p style="margin-bottom: 15px; color: #94a3b8;">Mga piling kuha at portfolio ng litrato:</p>
+      <p>A selection of featured shots and photography portfolio:</p>
       
-      <div class="project-grid">
-        <div class="project-item">
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Urban Landscape" class="portfolio-img">
-          <h3>Urban & Street Scapital</h3>
-          <p>Isang serye ng mga kuha na nagpapakita ng buhay at kultura sa kalsada gamit ang natural na liwanag at tamang timing.</p>
+      <div class="gallery-grid">
+        <div class="card">
+          <img alt="Urban Landscape" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80">
+          <h3>Urban & Street Scapes</h3>
+          <p>A series of street photography capturing culture and everyday life using natural light and precise timing.</p>
         </div>
 
-        <div class="project-item">
-          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Portrait Photography" class="portfolio-img">
+        <div class="card">
+          <img alt="Portrait Photography" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80">
           <h3>Portrait & Expression Series</h3>
-          <p>Meticulously edited portrait photography na nagpopokus sa totoong emosyon, lighting contrast, at sharp details ng subject.</p>
+          <p>Meticulously edited portrait photography highlighting authentic emotion, lighting contrast, and sharp details.</p>
         </div>
 
-        <div class="project-item">
-          <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80" alt="Nature and Scenery" class="portfolio-img">
+        <div class="card">
+          <img alt="Nature and Scenery" src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80">
           <h3>Nature & Scenic Wonders</h3>
-          <p>Pagkuha sa kagandahan ng kalikasan na may pinaghandaang color grading upang mas lumabas ang matingkad na kulay ng paligid.</p>
+          <p>Capturing the beauty of nature with thoughtful color grading to enhance vivid colors and details.</p>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="card">
+    <!-- 🎮 5 MINI-GAMES ARCADE SECTION -->
+    <section id="games" class="games-section">
+      <h2>🎮 Mini-Game Arcade</h2>
+      <p class="subtitle">Take a break and choose a game to play!</p>
+
+      <!-- Game Selection Buttons -->
+      <div class="game-selector">
+        <button type="button" class="game-tab-btn active" data-game="ttt">❌ Tic-Tac-Toe</button>
+        <button type="button" class="game-tab-btn" data-game="rps">✌️ Rock Paper Scissors</button>
+        <button type="button" class="game-tab-btn" data-game="gtn">🔢 Guess Number</button>
+        <button type="button" class="game-tab-btn" data-game="mem">🧠 Memory Game</button>
+        <button type="button" class="game-tab-btn" data-game="snk">🐍 Snake Game</button>
+      </div>
+
+      <!-- GAME 1: Tic Tac Toe -->
+      <div id="game-ttt" class="game-box active-game">
+        <h3>Tic-Tac-Toe</h3>
+        <div id="ttt-status" class="game-status">Player X's Turn</div>
+        <div class="tic-tac-toe-board">
+          <button type="button" class="cell" data-cell-index="0"></button>
+          <button type="button" class="cell" data-cell-index="1"></button>
+          <button type="button" class="cell" data-cell-index="2"></button>
+          <button type="button" class="cell" data-cell-index="3"></button>
+          <button type="button" class="cell" data-cell-index="4"></button>
+          <button type="button" class="cell" data-cell-index="5"></button>
+          <button type="button" class="cell" data-cell-index="6"></button>
+          <button type="button" class="cell" data-cell-index="7"></button>
+          <button type="button" class="cell" data-cell-index="8"></button>
+        </div>
+        <button id="ttt-restart" type="button" class="btn restart-btn">🔄 Restart Game</button>
+      </div>
+
+      <!-- GAME 2: Rock Paper Scissors -->
+      <div id="game-rps" class="game-box">
+        <h3>Rock Paper Scissors</h3>
+        <div id="rps-status" class="game-status">Choose your move!</div>
+        <div class="rps-choices">
+          <button type="button" class="btn choice-btn" data-choice="✊ Rock">✊ Rock</button>
+          <button type="button" class="btn choice-btn" data-choice="✋ Paper">✋ Paper</button>
+          <button type="button" class="btn choice-btn" data-choice="✌️ Scissors">✌️ Scissors</button>
+        </div>
+        <div id="rps-result" class="game-result"></div>
+      </div>
+
+      <!-- GAME 3: Guess The Number -->
+      <div id="game-gtn" class="game-box">
+        <h3>Guess the Number (1 - 100)</h3>
+        <div id="gtn-status" class="game-status">Guess a number between 1 and 100!</div>
+        <div class="gtn-controls">
+          <input type="number" id="gtn-input" min="1" max="100" placeholder="Enter number...">
+          <button id="gtn-submit" type="button" class="btn">Submit</button>
+        </div>
+        <button id="gtn-restart" type="button" class="btn restart-btn">🔄 Play Again</button>
+      </div>
+
+      <!-- GAME 4: Memory Match -->
+      <div id="game-mem" class="game-box">
+        <h3>Memory Card Match</h3>
+        <div id="mem-status" class="game-status">Find all matching pairs!</div>
+        <div class="memory-board" id="mem-board"></div>
+        <button id="mem-restart" type="button" class="btn restart-btn">🔄 Reset Board</button>
+      </div>
+
+      <!-- GAME 5: Snake Game -->
+      <div id="game-snk" class="game-box">
+        <h3>Classic Snake Game</h3>
+        <div id="snk-status" class="game-status">Press Start or Arrow Keys to Play!</div>
+        <canvas id="snakeCanvas" width="300" height="300"></canvas>
+        <div class="snake-controls">
+          <button id="snk-start" type="button" class="btn">▶️ Start / Restart</button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
       <h2>Contact Me</h2>
-      <p>Kailangan mo ba ng photographer o may inquiry ka? Mag-email lang sa <strong>nemiabeluso432@gmail.com</strong> o tumawag sa <strong>09062539548</strong>.</p>
+      <p>Do you need a photographer or have an inquiry? Feel free to email me at <strong>nemiabeluso432@gmail.com</strong> or call <strong>09062539548</strong>.</p>
     </section>
   </main>
 
-  <!-- AI Assistant Chatbot -->
-  <div id="ai-widget">
-    <button id="chat-toggle">💬 Ask Nemia AI</button>
-    <div id="chat-box" class="hidden">
-      <div class="chat-header">
-        <span>NEMIA-BOT v1.0</span>
-        <button id="chat-close">✕</button>
-      </div>
-      <div id="chat-messages" class="chat-body">
-        <div class="bot-msg">Kumusta! Ako ang AI assistant ni Nemia Cocal Beluso. Pwede mo akong tanungin tungkol sa kanyang photography skills, projects, o contact info!</div>
-      </div>
-      <div class="chat-footer">
-        <input type="text" id="user-input" placeholder="Magtanong dito..." />
-        <button id="send-btn">Send</button>
-      </div>
-    </div>
-  </div>
-
+  <!-- JavaScript File Link -->
   <script src="script.js"></script>
 </body>
 </html>
