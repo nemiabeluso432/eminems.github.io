@@ -173,6 +173,25 @@
     </section>
   </main>
 
+  <!-- AI Chatbot Floating Widget -->
+  <button id="chat-widget-button" type="button">💬 AI Assistant</button>
+
+  <div id="chat-popup" class="chat-popup">
+    <div class="chat-header">
+      <h3>🤖 Nemia's AI Assistant</h3>
+      <button id="close-chat" type="button" class="close-btn">&times;</button>
+    </div>
+    <div id="chat-messages" class="chat-messages">
+      <div class="message bot-message">
+        Kumusta! Ako ang AI Assistant ni Nemia. Pwede mo akong tanungin tungkol sa kanyang portfolio, contact info, o mga serbisyo sa photography!
+      </div>
+    </div>
+    <form id="chat-form" class="chat-input-container">
+      <input type="text" id="chat-input" placeholder="Magtanong dito..." autocomplete="off" required>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
   <!-- JavaScript File Link -->
   <script src="script.js"></script>
 </body>

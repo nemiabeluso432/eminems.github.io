@@ -247,4 +247,66 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
+  // AI Chatbot Widget Logic
+  const chatWidgetBtn = document.getElementById('chat-widget-button');
+  const chatPopup = document.getElementById('chat-popup');
+  const closeChatBtn = document.getElementById('close-chat');
+  const chatForm = document.getElementById('chat-form');
+  const chatInput = document.getElementById('chat-input');
+  const chatMessages = document.getElementById('chat-messages');
+
+  if (chatWidgetBtn && chatPopup) {
+    chatWidgetBtn.addEventListener('click', () => {
+      chatPopup.classList.toggle('show');
+    });
+
+    if (closeChatBtn) {
+      closeChatBtn.addEventListener('click', () => {
+        chatPopup.classList.remove('show');
+      });
+    }
+
+    chatForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const userText = chatInput.value.trim();
+      if (!userText) return;
+
+      appendMessage(userText, 'user-message');
+      chatInput.value = '';
+
+      setTimeout(() => {
+        const botReply = getBotResponse(userText.toLowerCase());
+        appendMessage(botReply, 'bot-message');
+      }, 500);
+    });
+
+    function appendMessage(text, className) {
+      const msgDiv = document.createElement('div');
+      msgDiv.className = `message ${className}`;
+      msgDiv.textContent = text;
+      chatMessages.appendChild(msgDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function getBotResponse(input) {
+      if (input.includes('email') || input.includes('gmail')) {
+        return "Ang email ni Nemia ay nemiabeluso432@gmail.com";
+      } else if (input.includes('phone') || input.includes('number') || input.includes('contact') || input.includes('tumawag')) {
+        return "Maaari mo syang tawagan sa 09062539548.";
+      } else if (input.includes('address') || input.includes('tirahan') || input.includes('lugar') || input.includes('tira')) {
+        return "Ang address ni Nemia ay 1212 Gen. Luna St. Paco Manila.";
+      } else if (input.includes('skill') || input.includes('marunong') || input.includes('kakayahan')) {
+        return "Kabilang sa mga skills ni Nemia ang Portrait Photography, Street & Landscape Photography, Color Grading, Photo Editing, at HTML.";
+      } else if (input.includes('resume') || input.includes('cv')) {
+        return "Pwede mong i-preview o i-download ang CV ni Nemia sa Resume section sa itaas!";
+      } else if (input.includes('game') || input.includes('laro')) {
+        return "May 5 mini-games dito sa portfolio: Tic-Tac-Toe, Rock Paper Scissors, Guess Number, Memory Match, at Snake Game!";
+      } else if (input.includes('hi') || input.includes('hello') || input.includes('kamusta') || input.includes('kumusta')) {
+        return "Hello! May maitutulong ba ako tungkol sa portfolio ni Nemia?";
+      } else {
+        return "Salamat sa pagtatanong! Para sa iba pang detalye, maaari mo ring i-email si Nemia sa nemiabeluso432@gmail.com.";
+      }
+    }
+  }
+
 });
