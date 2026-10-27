@@ -18,13 +18,53 @@ main {
   margin: 0 auto;
 }
 
-/* Hero / About Section */
-.hero-section {
+/* Header & Nav */
+header {
+  max-width: 900px;
+  margin: 0 auto 20px auto;
   background: #ffffff;
-  padding: 20px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Sections General */
+section {
+  background: #ffffff;
+  padding: 25px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   margin-bottom: 20px;
+}
+
+.hero-section h1 {
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.tagline {
+  color: #7f8c8d;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
 
 .contact-info p {
@@ -32,24 +72,12 @@ main {
   font-size: 16px;
 }
 
-/* Resume Section */
-.resume-section {
-  background: #ffffff;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.resume-section h2 {
-  margin-bottom: 5px;
-  color: #2c3e50;
-}
-
 .subtitle {
   color: #666;
   margin-bottom: 15px;
 }
 
+/* Resume Section */
 .resume-actions {
   display: flex;
   gap: 10px;
@@ -68,24 +96,12 @@ main {
   transition: background-color 0.2s ease;
 }
 
-.toggle-btn {
-  background-color: #17a2b8;
-  color: white;
-}
+.toggle-btn { background-color: #17a2b8; color: white; }
+.view-btn { background-color: #007bff; color: white; }
+.download-btn { background-color: #28a745; color: white; }
+.restart-btn { background-color: #6c757d; color: white; margin-top: 10px; }
 
-.view-btn {
-  background-color: #007bff;
-  color: white;
-}
-
-.download-btn {
-  background-color: #28a745;
-  color: white;
-}
-
-.btn:hover {
-  opacity: 0.9;
-}
+.btn:hover { opacity: 0.9; }
 
 .pdf-container {
   border: 1px solid #ddd;
@@ -93,12 +109,152 @@ main {
   overflow: hidden;
 }
 
-.pdf-container.hidden {
-  display: none;
+.pdf-container.hidden { display: none; }
+.pdf-container iframe { border: none; }
+
+/* Skills Grid */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
 }
 
-.pdf-container iframe {
-  border: none;
+.skills-grid span {
+  background: #e9ecef;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.card {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3 { padding: 10px 15px 5px; font-size: 18px; }
+.card p { padding: 0 15px 15px; font-size: 14px; color: #555; }
+
+/* Mini-Games Section */
+.game-selector {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.game-tab-btn {
+  padding: 8px 15px;
+  border: 1px solid #007bff;
+  background: white;
+  color: #007bff;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.game-tab-btn.active {
+  background: #007bff;
+  color: white;
+}
+
+.game-box {
+  display: none;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.game-box.active-game {
+  display: block;
+}
+
+.game-status {
+  font-weight: bold;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* Tic Tac Toe Board */
+.tic-tac-toe-board {
+  display: grid;
+  grid-template-columns: repeat(3, 70px);
+  gap: 5px;
+  justify-content: center;
+  margin: 15px auto;
+}
+
+.cell {
+  width: 70px;
+  height: 70px;
+  font-size: 24px;
+  font-weight: bold;
+  background: white;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* RPS Choices */
+.rps-choices {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+/* Memory Match Board */
+.memory-board {
+  display: grid;
+  grid-template-columns: repeat(4, 60px);
+  gap: 10px;
+  justify-content: center;
+  margin: 15px auto;
+}
+
+.mem-card {
+  width: 60px;
+  height: 60px;
+  background: #007bff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.mem-card.flipped {
+  background: #e9ecef;
+  color: #333;
+}
+
+/* Snake Canvas */
+#snakeCanvas {
+  background: #1a1a1a;
+  border-radius: 5px;
+  margin: 10px auto;
+  display: block;
 }
 
 /* ==========================================

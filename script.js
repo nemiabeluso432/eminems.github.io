@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // 2. Tab Switching Logic (Direct Style Control para siguradong gagana)
+  // 2. Tab Switching Logic
   const tabBtns = document.querySelectorAll('.game-tab-btn');
   const gameBoxes = document.querySelectorAll('.game-box');
 
